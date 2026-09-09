@@ -1,14 +1,19 @@
+/* ---------- Design additions: buttons, hero backdrop, subtle bg texture ---------- */
+
 :root{
   --bg: #f7f7f5;
   --text: #171717;
   --muted: #666666;
   --border: #deded8;
   --accent: #315cff;
+  --accent-2: #2b5fe6;
+  --glass: rgba(255,255,255,0.6);
+  --shadow: rgba(16,24,40,0.06);
   --max-width: 720px;
   --content-padding: 28px;
   --serif: Georgia, "Times New Roman", serif;
   --ui: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  --radius: 8px;
+  --radius: 10px;
 }
 
 /* Dark theme vars */
@@ -18,9 +23,12 @@ body.dark{
   --muted: #b8bcc0;
   --border: #2a2f33;
   --accent: #6ea2ff;
+  --accent-2: #4f8bff;
+  --glass: rgba(18,20,22,0.35);
+  --shadow: rgba(0,0,0,0.45);
 }
 
-/* Base */
+/* Base styles */
 *{box-sizing:border-box}
 html,body{height:100%}
 body{
@@ -32,6 +40,10 @@ body{
   -moz-osx-font-smoothing:grayscale;
   line-height:1.72;
   font-size:19px; /* desktop default */
+  /* subtle textured background using layered gradients */
+  background-image: radial-gradient(circle at 10% 10%, rgba(49,92,255,0.02) 0, transparent 20%),
+                    radial-gradient(circle at 90% 80%, rgba(49,92,255,0.01) 0, transparent 25%),
+                    linear-gradient(180deg, rgba(0,0,0,0.015), rgba(255,255,255,0.01));
 }
 
 /* Container & layout */
@@ -41,18 +53,38 @@ body{
 .header-controls{display:flex;gap:14px;align-items:center}
 .header-controls .small{color:var(--muted);font-size:13px}
 
+/* Button base */
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;padding:8px 12px;border-radius:8px;font-size:14px;cursor:pointer;transition:transform .12s ease,box-shadow .12s ease,background .12s ease;color:var(--text);background:transparent}
+.btn:focus{outline:3px solid rgba(49,92,255,0.12);outline-offset:2px}
+.btn:active{transform:translateY(1px)}
+
+/* Ghost / subtle */
+.btn-ghost{background:transparent;border:1px solid transparent;padding:7px 10px;color:var(--muted)}
+.btn-ghost:hover{color:var(--text);background:rgba(49,92,255,0.04);border-color:var(--border)}
+
+/* Primary */
+.btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;box-shadow:0 6px 18px rgba(49,92,255,0.08);border:none}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(49,92,255,0.12)}
+
+/* CTA circular arrow */
+.btn-cta{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:999px;background:linear-gradient(180deg,rgba(49,92,255,0.12),rgba(49,92,255,0.06));color:var(--accent);font-size:22px;text-decoration:none;border:1px solid rgba(49,92,255,0.08);box-shadow:0 6px 18px var(--shadow)}
+.btn-cta:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(49,92,255,0.09)}
+
 /* Progress bar */
 .progress-wrap{height:4px;background:transparent}
 .progress{height:4px;background:linear-gradient(90deg,var(--accent),rgba(49,92,255,0.6));width:0;transition:width .12s linear;border-radius:2px}
 
 /* Article layout */
 .article{display:grid;grid-template-columns: 1fr 300px;gap:32px;padding:20px 0}
-.hero{grid-column:1/2;padding:48px 0 12px}
+.hero{grid-column:1/2;padding:48px 24px 12px;position:relative;overflow:visible}
+
+/* Hero backdrop */
+.hero::before{content:"";position:absolute;inset:auto -40px  -40px -40px;background:linear-gradient(135deg,rgba(49,92,255,0.04),rgba(49,92,255,0.01));filter:blur(24px);z-index:-1;border-radius:16px;pointer-events:none}
 .hero-title{font-family:var(--serif);font-size:40px;margin:0 0 16px;line-height:1.08}
 .hero-lead{color:var(--muted);margin:0 0 14px;font-size:18px}
 .hero-meta{color:var(--muted);font-size:13px;margin-top:8px}
 
-.toc{position:sticky;top:84px;align-self:start;border-left:1px solid var(--border);padding-left:18px}
+.toc{position:sticky;top:84px;align-self:start;border-left:1px solid var(--border);padding-left:18px;background:transparent}
 .toc strong{display:block;margin-bottom:10px}
 .toc ol{padding-left:18px;margin:0}
 .toc a{color:var(--accent);text-decoration:none;font-size:14px}
@@ -78,6 +110,9 @@ li{margin-bottom:8px;color:var(--text);}
 .article-footer{border-top:1px solid var(--border);padding:22px 0;margin-top:36px;color:var(--muted)}
 .footer-links{display:flex;gap:12px}
 
+/* Subtle card for sections on hover (desktop) */
+.section:hover{box-shadow:0 6px 30px rgba(16,24,40,0.02);border-radius:6px}
+
 /* Responsive */
 @media (max-width:900px){
   .article{grid-template-columns:1fr; padding-bottom:40px}
@@ -90,6 +125,8 @@ li{margin-bottom:8px;color:var(--text);}
   :root{--content-padding:18px}
   body{font-size:17px}
   .hero-title{font-size:28px}
+  .header-controls{gap:8px}
+  .btn-cta{width:44px;height:44px}
 }
 
 /* Accessibility */
