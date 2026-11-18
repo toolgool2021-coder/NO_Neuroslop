@@ -5,17 +5,17 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Почему я отрицательно отношусь к нейрослопу — Toolgool</title>
   <meta name="description" content="Лонгрид о понятии «нейрослоп» — почему массовая генерация контента без авторского контроля раздражает, где проходит граница между инструментом и заменой мышления и как использовать ИИ ответственно." />
-  <link rel="canonical" href="https://example.com/no-neuroslop" />
+  <link rel="canonical" href="https://notslop.duckdns.org/" />
   <!-- Open Graph -->
   <meta property="og:title" content="Почему я отрицательно отношусь к нейрослопу — Toolgool" />
   <meta property="og:description" content="Лонгрид о понятии «нейрослоп» — почему массовая генерация контента без авторского контроля раздражает, где проходит граница между инструментом и заменой мышления и как использовать ИИ ответственно." />
   <meta property="og:type" content="article" />
-  <meta property="og:image" content="assets/images/og-preview.png" />
+  <meta property="og:image" content="https://notslop.duckdns.org/assets/images/og-preview.svg" />
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Почему я отрицательно отношусь к нейрослопу — Toolgool" />
   <meta name="twitter:description" content="Лонгрид о понятии «нейрослоп» — почему массовая генерация контента без авторского контроля раздражает, где проходит граница между инструментом и заменой мышления и как использовать ИИ ответственно." />
-  <meta name="theme-color" content="#f7f7f5" />
+  <meta name="theme-color" content="#101113" /><meta property="og:url" content="https://notslop.duckdns.org/" /><meta name="color-scheme" content="dark light" />
   <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="assets/css/styles.css" />
   <!-- Preload font (optional if you want to self-host later) -->
@@ -23,15 +23,15 @@
 <body class="light">
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="/">Toolgool</a>
+      <a class="brand" href="#hero"><span class="brand-mark">N<span>O</span></span> <span>NEUROSLOP<span class="brand-period">.</span></span></a>
       <nav class="header-controls" aria-label="Сервисные элементы">
         <div class="meta small">
           <span>Автор: Toolgool</span>
           <span> · 2026</span>
           <span> · чтение ≈ 9 минут</span>
         </div>
-        <button id="theme-toggle" class="btn btn-ghost" aria-pressed="false" aria-label="Переключить тему">Тема</button>
-        <button id="toc-toggle" class="btn btn-ghost" aria-expanded="false" aria-controls="toc">Содержание</button>
+        <button id="theme-toggle" class="btn btn-ghost" aria-pressed="false" aria-label="Переключить тему"><span aria-hidden="true">◐</span> <span id="theme-label">Тема</span></button>
+        <button id="toc-toggle" class="btn btn-ghost" aria-expanded="false" aria-controls="toc"><span aria-hidden="true">☷</span> Содержание</button>
       </nav>
     </div>
     <div class="progress-wrap" aria-hidden="true"><div id="reading-progress" class="progress"></div></div>
@@ -39,19 +39,19 @@
 
   <main class="container" id="content" role="main">
     <article class="article" id="article">
-      <section class="hero" id="hero">
-        <h1 class="hero-title">Почему я отрицательно отношусь к нейрослопу</h1>
+      <section class="hero" id="hero"><div class="hero-eyebrow"><span class="status-dot"></span> НЕЗАВИСИМЫЙ МАНИФЕСТ · TOOLGOOL / 2026</div>
+        <h1 class="hero-title">Меньше <em>нейрослопа.</em><br>Больше <span class="outline-type">смысла.</span></h1><p class="hero-subtitle">Почему я отрицательно отношусь к нейрослопу</p>
         <p class="hero-lead">Не к нейросетям. К тому, во что превращается творчество, когда думать становится необязательно.</p>
         <div class="hero-meta">
           <span>Автор: Toolgool</span>
           <span> · 2026</span>
           <span> · чтение ≈ 9 минут</span>
         </div>
-        <a class="to-content btn-cta" href="#thesis" aria-label="Перейти к содержанию">↓</a>
+        <div class="hero-actions"><a class="btn btn-primary" href="#thesis">Читать манифест <span aria-hidden="true">↗</span></a><button class="btn btn-outline" id="share-hero" type="button">Поделиться <span aria-hidden="true">↗</span></button></div><div class="hero-art" aria-hidden="true"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="core-art">NO<span>/</span>AI SLOP</div><div class="hero-art-caption">HUMAN THINKING <span>≠</span> AUTO GENERATION</div></div>
       </section>
 
       <nav id="toc" class="toc" aria-label="Содержание">
-        <strong>Содержание</strong>
+        <strong>НАВИГАЦИЯ <span class="toc-counter" id="toc-counter">01 / 15</span></strong><div class="toc-search-wrap"><label class="sr-only" for="toc-search">Найти раздел</label><input id="toc-search" type="search" placeholder="Найти раздел..." autocomplete="off"></div>
         <ol>
           <li><a href="#thesis">Краткий вводный тезис</a></li>
           <li><a href="#definition">Что я называю «нейрослопом»</a></li>
@@ -81,7 +81,7 @@
       <section id="definition" class="section">
         <h2>Что я называю «нейрослопом»</h2>
         <p>Под «нейрослопом» я понимаю массово производимый, бездумный и однообразный контент, где генерация становится заменой автора, а не инструментом. Это не любое произведение, в создании которого использовался ИИ. Не каждое изображение от генератора — автоматически «плохое». Нейрослоп возникает тогда, когда человек перестаёт контролировать результат, не проверяет его, не вносит осмысленных правок и не несёт ответственности за содержание.</p>
-        <p>Ключевые признаки нейрослопа: минимальная авторская вовлечённость, копирование «��отового» вывода без осмысления, массовая репликация одного стиля или шаблона и публикация результата как собственной работы.</p>
+        <p>Ключевые признаки нейрослопа: минимальная авторская вовлечённость, копирование «готового» вывода без осмысления, массовая репликация одного стиля или шаблона и публикация результата как собственной работы.</p>
       </section>
 
       <section id="not-against-ai" class="section">
@@ -104,7 +104,7 @@
 
       <section id="authorship" class="section">
         <h2>Авторство</h2>
-        <p>Вопрос «кто автор?» — не только юридический. Для меня автор — тот, кто взял на себя интеллектуальную ответственность: придумал форму, внёс решения, отвечал за последствия. Если человек придумал концепцию, ис��ользовал ИИ как материал, переработал результат и подписал итог — это его работа. Если человек лишь скопировал сгенерированное и выдал за своё — это не авторство, это имитация.</p>
+        <p>Вопрос «кто автор?» — не только юридический. Для меня автор — тот, кто взял на себя интеллектуальную ответственность: придумал форму, внёс решения, отвечал за последствия. Если человек придумал концепцию, использовал ИИ как материал, переработал результат и подписал итог — это его работа. Если человек лишь скопировал сгенерированное и выдал за своё — это не авторство, это имитация.</p>
         <p>Разница в уровне участия резко меняет и художественную ценность, и практическую ответственность. Я категорически против смешивания этих статусов без прозрачности.</p>
       </section>
 
@@ -168,9 +168,10 @@
         </div>
       </section>
 
-      <section id="my-boundary" class="section">
+      <section id="good-use" class="section"><h2>Что я считаю нормальным использованием ИИ</h2><p>Нормальное использование ИИ начинается с собственной задачи и заканчивается личной проверкой результата. Полезно поручить модели черновик, поиск альтернатив, объяснение сложного момента или рутинную работу. Но именно человек выбирает направление, сверяет факты и отвечает за опубликованное.</p><p>Для меня важнее не количество применённых инструментов, а то, способен ли автор объяснить, почему работа сделана именно так — и исправить её без слепой зависимости от генератора.</p></section>
+<section id="my-boundary" class="section">
         <h2>Моя граница</h2>
-        <p>Я не считаю использование ИИ мошенничеством само по себе. Я не требую, чтобы всё делалось вручную, и не выступаю за запрет технологий. Моя граница — момент, когда человек перестаёт быть автором и превращается в оператора генератора, публикующего результат без п��нимания и ответственности.</p>
+        <p>Я не считаю использование ИИ мошенничеством само по себе. Я не требую, чтобы всё делалось вручную, и не выступаю за запрет технологий. Моя граница — момент, когда человек перестаёт быть автором и превращается в оператора генератора, публикующего результат без понимания и ответственности.</p>
         <p>Если вы используете ИИ, но понимаете, перерабатываете и несёте ответственность — это ваша работа. Если вы нажали кнопку и ушли — это нейрослоп, и с этим я борюсь.</p>
       </section>
 
@@ -183,15 +184,16 @@
 
       <footer class="article-footer" role="contentinfo">
         <div class="container">
-          <p>Если вам близка эта позиция — спасибо, что дочитали. Если вы с ней не согласны — отлично, давайте обсуждать. Автор: Toolgool · 2026</p>
+          <div class="footer-kicker">НЕ КОНЕЦ ДИСКУССИИ</div><p>Если вам близка эта позиция — спасибо, что дочитали. Если вы с ней не согласны — отлично, давайте обсуждать. Автор: Toolgool · 2026</p>
           <nav class="footer-links" aria-label="Полезные ссылки">
-            <a class="btn btn-ghost" href="#toc">К содержанию</a>
+            <button class="btn btn-ghost" id="copy-link" type="button">Скопировать ссылку</button><button class="btn btn-ghost" id="copy-quote" type="button">Цитировать манифест</button><a class="btn btn-ghost" href="#toc">К содержанию</a>
             <a class="btn btn-ghost" href="https://github.com/toolgool2021-coder/NO_Neuroslop">Исходники</a>
           </nav>
         </div>
       </footer>
     </article>
   </main>
+<button id="back-to-top" class="back-to-top" type="button" aria-label="Наверх" title="Наверх">↑</button><div id="toast" class="toast" role="status" aria-live="polite"></div>
 
   <script src="assets/js/main.js" defer></script>
 </body>
